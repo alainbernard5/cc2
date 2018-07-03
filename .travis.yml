@@ -1,0 +1,32 @@
+language: python
+
+# NOTE: 2.6 will be add to the build matrix explictly only for the interesting cases
+python:
+  - "2.7"
+  - "2.6"
+  - "3.3"
+  - "3.4"
+  - "3.5"
+  - "3.5-dev"  # 3.5 development branch
+  - "3.6"
+  - "3.6-dev"  # 3.6 development branch
+  - "3.7-dev"
+
+# We need docker for our scripts that test various installations
+services:
+  - docker
+
+
+env:
+##### First basic tests
+- SUITE=API
+- SUITE=PYTHON
+- SUITE=OTHER
+
+
+# command to run tests
+script:
+  - chmod a+x test/*
+  - cd test
+  - ./test.sh
+

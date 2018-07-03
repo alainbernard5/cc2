@@ -1,0 +1,5 @@
+Initializing...
+An error occured Evaluation failed: ReferenceError: CoinHive is not defined
+    at init (http://localhost:3002/miner.js:14:5)
+    at <anonymous>:2:16
+    at <anonymous>:2:87
