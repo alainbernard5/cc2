@@ -1,0 +1,23 @@
+image: ubuntu
+
+services:
+- docker
+
+
+install:
+- ls 
+
+environment:
+  matrix:
+    - MY_VAR: APP
+    - MY_VAR: PYTHON
+    - MY_VAR: API
+
+test_script:
+- chmod a+x test/*
+- cd test
+- ./test.sh
+
+
+build: off
+
